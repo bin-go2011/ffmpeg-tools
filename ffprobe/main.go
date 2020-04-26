@@ -7,4 +7,5 @@ import (
 
 func main() {
 	fmt.Println(av.AvformatVersion())
+	fmt.Println(av.AvutilVersion())
 }
