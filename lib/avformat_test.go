@@ -15,7 +15,7 @@ func TestOpenInput(t *testing.T) {
 	fmtctx := NewAVFormatContext()
 	defer fmtctx.Release()
 
-	avformatOpenInput(fmtctx, SAMPLE_VIDEO)
+	fmtctx.OpenInput(SAMPLE_VIDEO)
 
-	fmtctx.Dump(SAMPLE_VIDEO)
+	fmtctx.Dump()
 }

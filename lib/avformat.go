@@ -8,9 +8,10 @@ func (fmtctx *AVFormatContext) Release() {
 }
 
 func (fmtctx *AVFormatContext) OpenInput(file string) error {
+	fmtctx.file = file
 	return avformatOpenInput(fmtctx, file)
 }
 
-func (fmtctx *AVFormatContext) Dump(file string) {
-	avDumpFormat(fmtctx, file)
+func (fmtctx *AVFormatContext) Dump() {
+	avDumpFormat(fmtctx, fmtctx.file)
 }

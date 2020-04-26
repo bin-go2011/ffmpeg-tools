@@ -10,6 +10,7 @@ import (
 
 type AVFormatContext struct {
 	handle uintptr
+	file   string
 }
 
 var avformatDLL *windows.DLL
