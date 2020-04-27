@@ -13,7 +13,7 @@ var (
 )
 
 func init() {
-	avutilDLL = windows.MustLoadDLL("../win64/avutil-56.dll")
+	avutilDLL = windows.MustLoadDLL("../lib/avutil-56.dll")
 	avutilVersionProc = avutilDLL.MustFindProc("avutil_version")
 }
 

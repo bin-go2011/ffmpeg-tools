@@ -24,7 +24,7 @@ var (
 )
 
 func init() {
-	avformatDLL = windows.MustLoadDLL("../win64/avformat-58.dll")
+	avformatDLL = windows.MustLoadDLL("../lib/avformat-58.dll")
 
 	avformatVersionProc = avformatDLL.MustFindProc("avformat_version")
 	avformatAllocContextProc = avformatDLL.MustFindProc("avformat_alloc_context")
