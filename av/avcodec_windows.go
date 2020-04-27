@@ -6,19 +6,19 @@ import (
 	"golang.org/x/sys/windows"
 )
 
-var avutilDLL *windows.DLL
+var avcodecDLL *windows.DLL
 
 var (
-	avutilVersionProc *windows.Proc
+	avcodecVersionProc *windows.Proc
 )
 
 func init() {
-	avutilDLL = windows.MustLoadDLL("../lib/avutil-56.dll")
-	avutilVersionProc = avutilDLL.MustFindProc("avutil_version")
+	avcodecDLL = windows.MustLoadDLL("../lib/avcodec-58.dll")
+	avcodecVersionProc = avcodecDLL.MustFindProc("avcodec_version")
 }
 
-func avutilVersion() string {
-	r1, _, _ := avutilVersionProc.Call()
+func avcodecVersion() string {
+	r1, _, _ := avcodecVersionProc.Call()
 
 	version := int32(r1)
 	subminor := version & 0xff

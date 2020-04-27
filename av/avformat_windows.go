@@ -33,7 +33,7 @@ func init() {
 	avDumpFormatProc = avformatDLL.MustFindProc("av_dump_format")
 }
 
-func AvformatVersion() string {
+func avformatVersion() string {
 	r1, _, _ := avformatVersionProc.Call()
 
 	version := int32(r1)
